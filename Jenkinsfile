@@ -6,15 +6,12 @@ pipeline{
                 sh 'mvn clean package'
             }
         }
-        stage('Archive'){
-            steps{
-                   archiveArtifacts allowEmptyArchive: true, artifacts: '**/ct5171_*.jar'
-            }
-        }
     }
     post{
             success{
                 echo 'Success'
+                archiveArtifacts allowEmptyArchive: true, artifacts: '**/ct5171_*.jar'
+
             }
             failure{
                 echo 'Failure'
