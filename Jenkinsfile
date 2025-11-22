@@ -8,9 +8,6 @@ pipeline{
         }
     }
     post{
-            always{
-                echo 'Process finished'
-            }
             success{
                 echo 'Success'
             }
